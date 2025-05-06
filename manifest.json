@@ -1,0 +1,19 @@
+{
+  "name": "Botão de Filtro de Valores Vazios",
+  "vendor": "SeuNome",
+  "version": "1",
+  "description": "Botão que filtra valores vazios de uma coluna",
+  "resources": {
+    "js": ["script.js"],
+    "css": ["style.css"]
+  },
+  "style": "style.css",
+  "icon": "https://www.gstatic.com/images/icons/material/system/2x/filter_list_black_48dp.png",
+  "components": {
+    "create": "create",
+    "update": "update"
+  },
+  "interactionConfig": {
+    "supportedActions": ["FILTER"]
+  }
+}
