@@ -1,19 +1,14 @@
 {
-  "name": "Botão de Filtro de Valores Vazios",
-  "vendor": "SeuNome",
-  "version": "1",
-  "description": "Botão que filtra valores vazios de uma coluna",
-  "resources": {
-    "js": ["script.js"],
-    "css": ["style.css"]
-  },
-  "style": "style.css",
-  "icon": "https://www.gstatic.com/images/icons/material/system/2x/filter_list_black_48dp.png",
-  "components": {
-    "create": "create",
-    "update": "update"
-  },
-  "interactionConfig": {
-    "supportedActions": ["FILTER"]
-  }
+  "visualizations": [
+    {
+      "id": "unidades-sem-avaliacoes",
+      "label": "Unidades Sem Avaliações (Filtro)",
+      "description": "Botão que aplica um filtro para exibir apenas unidades com avaliações.",
+      "url": "https://rafaelpinto85.github.io/looker-filter-button/", 
+      "icon": "filter_alt",
+      "devMode": false,
+      "supportsExport": false,
+      "style": "both"
+    }
+  ]
 }
