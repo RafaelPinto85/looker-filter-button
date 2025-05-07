@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtro: Unidades Sem Avaliações</title>
+  <style>
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-ativo {
+      background-color: #28a745 !important; /* verde */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button
+    title="Ver unidades sem avaliação"
+    id="btn-unidades-sem-avaliacoes"
+    class="btn btn-primary"
+  >
+    Unidades Sem Avaliações
+  </button>
+
+  <script>
+    let filtroAtivo = false;
+
+    const botao = document.getElementById("btn-unidades-sem-avaliacoes");
+
+    botao.addEventListener("click", () => {
+      filtroAtivo = !filtroAtivo;
+
+      // Alterna cor do botão
+      botao.classList.toggle("btn-ativo", filtroAtivo);
+
+      // Define filtro ou limpa
+      const filtro = {
+        type: "FILTER",
+        filter: {
+          include: filtroAtivo
+            ? [{
+                column: "fx_Sem_Avaliacoes",
+                condition: "IS_NOT_NULL"
+              }]
+            : []
+        }
+      };
+
+      // Envia interação para o Looker Studio
+      dscc.sendInteraction(filtro);
+    });
+  </script>
+</body>
+</html>
